@@ -28,7 +28,7 @@
 			        	<div class="table-view">
 			          	<div class="radius-top cell-view">
 			          	<% unless paquete.thumbnail.nil? %>
-			          	 	<%= image_tag paquete.thumbnail.path %>
+			          	 	<%= image_tag paquete.thumbnail.file.width(280).height(210).fit('crop').to_url %>
 			          	<% end %>
 			          	</div>
 			          	<div class="title hotel-middle clearfix cell-view">

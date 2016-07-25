@@ -41,7 +41,7 @@ end
 activate :dato,
   domain: 'http://rough-snowflake-5071.admin.datocms.com/',
   token: 'dce7cfa980e218f6d5bf337a50ae1470bdb9f717b9cab2c675',
-  base_url: 'http://sivetur.guayo.me/'
+  base_url: 'https://sivetur.netlify.com/'
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout

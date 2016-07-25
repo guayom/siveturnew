@@ -42,9 +42,9 @@
                 <div class="swiper-container thumbnails-preview" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
                   <div class="swiper-wrapper">
                     <% counter = 0 %>
-                    <% unless paquete.imagen_horizontal.nil? %>
+                    <% unless paquete.thumbnail.nil? %>
                       <div class="swiper-slide active" data-val="<%= counter %>">
-               					<img class="img-responsive img-full" src="<%= dato_image_path(paquete.imagen_horizontal.path) %>" alt=""/>
+               					<%= image_tag paquete.thumbnail.file.width(800).height(600).fit('crop').to_url %>
                       </div>
                       <% counter += 1 %>
                     <% end %>
@@ -66,9 +66,9 @@
                 data-add-slides="5">
                   <div class="swiper-wrapper">
                     <% counter2 = 0 %>
-                    <% unless paquete.imagen_horizontal.nil? %>
+                    <% unless paquete.thumbnail.nil? %>
                       <div class="swiper-slide current active" data-val="<%= counter2 %>">
-                        <img class="img-responsive img-full" src="<%= dato_image_path(paquete.imagen_horizontal.path) %>" alt=""/>
+                        <%= image_tag paquete.thumbnail.file.width(150).height(113).fit('crop').to_url, :class => 'img-responsive img-full' %>
                       </div>
                       <% counter2 += 1 %>
                     <% end %>
