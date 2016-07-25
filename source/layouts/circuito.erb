@@ -90,8 +90,8 @@
                           <td><%= opcion.opcion %></td>
                           <td><%= circuito.moneda.simbolo %><%= opcion.single_high %></td>
                           <td><%= circuito.moneda.simbolo %><%= opcion.single_low %></td>
-                          <td><%= circuito.moneda.simbolo %><%= opcion.double %></td>
-                          <td><%= circuito.moneda.simbolo %><%= opcion.double %></td>
+                          <td><%= circuito.moneda.simbolo %><%= opcion.double if opcion.double.defined? %></td>
+                          <td><%= circuito.moneda.simbolo %><%= opcion.double if opcion.double.defined? %></td>
                         </tr>
                       <% end %>
                     </tbody>

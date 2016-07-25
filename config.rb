@@ -49,7 +49,7 @@ activate :dato,
 
 # General configuration
 dato.paquetes.each do |paquete|
-  proxy "/paquetes/#{paquete.slug}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
+  proxy "/paquetes/#{paquete.destino.code}/#{paquete.slug}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
 end
 
 dato.circuitos.each do |circuito|
