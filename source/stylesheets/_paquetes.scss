@@ -1,0 +1,61 @@
+.condiciones{
+  ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  padding-top: 30px;
+  font-size: 0.6em;
+}
+.precios{
+  margin-top: 15px;
+  h2{
+    color: $naranja;
+  }
+  padding: 60px;
+  .table{
+    th{
+      font-weight: bold;
+      padding: 16px 25px 12px 25px;
+      color: #666;
+    }
+    td{
+      color: #666;
+    }
+  }
+  .second-title{
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+  .precios-alert{
+    padding-top: 15px;
+  }
+}
+
+.right-sidebar{
+  h4{
+    text-align: center;
+  }
+  .details-desc{
+    ul{
+      text-align: center;
+      li{
+        font-weight: bold;
+        line-height: 1.1em;
+        margin-bottom: 20px;
+        small{
+          font-weight: 400;
+          font-size: 0.8em;
+        }
+        .fa{
+          font-size: 2em;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+.inner-banner{
+  background:$naranja;
+}

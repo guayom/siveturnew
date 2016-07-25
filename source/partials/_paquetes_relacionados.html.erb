@@ -1,0 +1,22 @@
+<div class="may-interested padd-90">
+  <div class="row">
+    <% pages_by_category('paquetes').each do |paquete_id, paquete| %>
+      <% unless paquete.url == current_page.path %>
+        <div class="col-mob-12 col-xs-6 col-sm-6 col-md-3">
+          <div class="hotel-item">
+             <div class="radius-top">
+               <img src="/images/<%= paquete.imagen %>.jpg" alt="">
+                 <div class="price price-s-1">$<%= paquete.precio %></div>
+             </div>
+             <div class="title clearfix">
+                 <h4><b><%= paquete.title %></b></h4>
+                 <span class="f-14 color-dark-2"><%= paquete.pais.capitalize %></span>
+                 <p class="f-14"><%= truncate_words(paquete.descripcion, :length => 20) %></p>
+                 <a href="/paquetes/<%= paquete_id %>.html" class="c-button bg-dr-blue hv-dr-blue-o b-50 fl">Mas detalles</a>
+             </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

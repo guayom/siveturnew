@@ -1,0 +1,62 @@
+<footer class="bg-dark type-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<div class="footer-block">
+          <svg width="150" height="62">
+            <image xlink:href="/images/logo.svg" src="/images/logo.png" width="150" height="62" />
+          </svg>
+					<div class="f_text color-grey-7"><%= data.about.short %></div>
+					<div class="footer-share">
+						<% data.contacto.social.each do |f| %>
+					  	<a href="<%= f.url %>"><span class="fa fa-<%= f.title %>"></span></a>
+					  <% end %>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-sm-6 no-padding">
+		   <div class="footer-block">
+			 <img src="/images/avianca.png" alt="Avianca" class="img-responsive"/>
+				<!--<h6>Ofertas Recientes</h6>-->
+
+		   </div>
+		</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+			   <div class="footer-block">
+            <h6>Destinos</h6>
+            <% data.destinos.each do |key, value| %>
+			        <a href="/paquetes/<%= key %>/" class="tags-b"><%= value %></a>
+            <% end %>
+		   </div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+               <div class="footer-block">
+                 <h6>Información de contacto</h6>
+                   <div class="contact-info">
+                    <div class="contact-line color-grey-3"><i class="fa fa-map-marker"></i><span><%= data.contacto.direccion %></span></div>
+				<div class="contact-line color-grey-3"><i class="fa fa-phone"></i><a href="tel:<%=  data.contacto.telefono %>"><%= data.contacto.telefono %></a></div>
+				<div class="contact-line color-grey-3"><i class="fa fa-envelope-o"></i><a href="mailto:<%=  data.contacto.email %>"><%= data.contacto.email %></a></div>
+			</div>
+		   </div>
+		</div>
+		</div>
+	</div>
+	<div class="footer-link bg-black">
+	  <div class="container">
+	  	<div class="row">
+	  		<div class="col-md-12">
+	  		    <div class="copyright">
+				<span>&copy; 2016 Sivetur. Todos los derechos reservados. </span>
+			</div>
+	  			<ul>
+				<li><a class="link-aqua" href="politica-de-privacidad.html">Política de privacidad</a></li>
+				<li><a class="link-aqua" href="#">La empresa</a></li>
+				<li><a class="link-aqua" href="#">Ofertas</a></li>
+				<li><a class="link-aqua" href="#">Luna de miel</a></li>
+				<li><a class="link-aqua" href="#">Contáctenos</a></li>
+			</ul>
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+</footer>

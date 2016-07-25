@@ -1,0 +1,25 @@
+paquetes:
+  - titulo: Paquete test
+    destino:
+      code: ecu
+      nombre: Ecuador
+    slug: test
+    moneda:
+      simbolo: $
+    precios:
+      - hotel: Hotel name
+        sgl: 100
+        dbl: 200
+        tpl: 300
+        chd: 50
+      - hotel: Other hotel
+        sgl: 150
+        dbl: 250
+        tpl: 350
+        chd: 50
+    caracteristicas:
+      - rubro: Rubro 1
+        texto_pequeno: en pequeño
+        icono: fa fa-check
+    imagen_horizontal:
+      path: 'text.jpg'

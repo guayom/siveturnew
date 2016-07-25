@@ -1,0 +1,12 @@
+- url: "/la-empresa.html"
+  titulo: "La Empresa"
+- url: "/paquetes/"
+  titulo: 'Paquetes'
+- url: "/circuitos/"
+  titulo: "Circuitos"
+- url: "/autos/"
+  titulo: "Autos"
+- url: "/galeria/"
+  titulo: "Nuestra Galeria"
+- url: "/contacto.html"
+  titulo: "Contactenos"

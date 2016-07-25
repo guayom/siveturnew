@@ -1,0 +1,34 @@
+%header.color-1.hovered.menu-3
+  .container
+    .row
+      .col-md-12
+        .nav
+          %a.logo{:href => "index.html"}
+            %svg{:height => "62", :width => "150"}
+              %image{:height => "62", :src => "/images/logo.png", :width => "150", "xlink:href" => "/images/logo.svg"}/
+          .nav-menu-icon
+            %a{:href => "#"}
+              %i
+          %nav.menu
+            %ul
+              %li{ nav_active('index.html') }
+                %a{:href => "/"}
+                  Inicio
+              %li{ nav_active('la-empresa.html') }
+                %a{:href => "/la-empresa.html"}
+                  La Empresa
+              %li{ nav_active('paquetes/index.html') }
+                %a{:href => "/paquetes/"}
+                  Paquetes
+              %li{ nav_active('circuitos/index.html') }
+                %a{:href => "/circuitos/"}
+                  Circuitos
+              %li{ nav_active('autos/index.html') }
+                %a{:href => "/autos/"}
+                  Autos
+              %li{ nav_active('galeria/index.html') }
+                %a{:href => "/galeria/"}
+                  Nuestra Galería
+              %li{ nav_active('contacto/index.html') }
+                %a{:href => "/contacto.html"}
+                  Contáctenos

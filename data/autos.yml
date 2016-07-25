@@ -1,0 +1,83 @@
+- imagen: cdar.JPG
+  nombre: Ford Focus
+  capacidad: 5
+  marca: Ford
+
+- imagen: economico.jpg
+  nombre: Kia Rio
+  capacidad: 5
+
+- imagen: ifar.JPG
+  nombre: Ford Escape
+  capacidad: 5
+  marca: Ford
+
+- imagen: pdar.JPG
+  nombre: Nissan Maxima
+  capacidad: 5
+  marca: Nissan
+
+- imagen: idar.jpg
+  nombre: Dodge Avenger
+  capacidad: 5
+  marca: Dodge
+
+- imagen: edar-spark.jpg
+  nombre: Chevrolet Spark
+  capacidad: 5
+  marca:
+
+- imagen: idar-corrolla.jpg
+  nombre: Toyota Corolla
+  capacidad: 5
+  marca: Toyota
+
+- imagen: ivar.jpg
+  nombre: Dodge Grand Caravan
+  capacidad: 5
+  marca: Dodge
+
+- imagen: fdar.JPG
+  nombre: Nissan Altima
+  capacidad: 5
+  marca: Nissan
+
+- imagen: fvar.JPG
+  nombre: Ford 12-pass Van
+  capacidad: 12
+  marca: Ford
+
+- imagen: intermedio.jpg
+  nombre: Dodge Avenger
+  capacidad: 5
+  marca: Dodge
+
+- imagen: edar.JPG
+  nombre: Kia Rio
+  capacidad: 5
+  marca: Kia
+
+- imagen: pfar.jpg
+  nombre: Chevrolet Suburban LX
+  capacidad: 7
+  marca: Chevrolet
+
+- imagen: minivan.jpg
+  nombre: Dodge Grand Caravan
+  capacidad: 7
+  marca: Dodge
+
+- imagen: sdar.JPG
+  nombre: Mitsubishi Galant
+  capacidad: 5
+  marca: Mitsubishi
+
+- imagen: sfar.JPG
+  nombre: Jeep Grand Cherokee
+  capacidad: 5
+  marca: Jeep
+
+- imagen: star.JPG
+  nombre: Ford Mustang Convertible
+  capacidad: 4
+  marca: Ford

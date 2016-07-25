@@ -1,0 +1,97 @@
+mexico-fascinante:  
+  title: México fascinante
+  pais: mexico
+  imagen: m_slide_1
+  precio: 800
+  descripcion: >
+    Lorem ipsum dolor sit amet, ea graeci inciderint sea. Per no dicunt abhorreant, vim et tritani dolores definitionem. Sit eripuit commune ne. Mollis iriure ut eam, est tollit appareat ne, sea iudico meliore ad. No audiam verterem voluptatum nec.
+    
+    At assum dicant definitionem sit, modo omnium indoctum at vim. Ex pri congue voluptaria disputando, est dictas feugiat ne, in quo falli omnesque. Ea atqui delicata deterruisset mea, eros probatus insolens duo eu. Mutat ornatus vis in. Id sit civibus tacimates. Viris facete oblique ut sit, duo iusto nobis ut.
+  incluye:
+    - Boleto aéreo San José/México/San José
+    - Traslados Aeropuerto/Hotel/Aeropuerto
+    - 4 noches México D.F./1 NOCHE Taxco/2 noches Acapulco
+    - Desayunos
+    - Alimentación todo incluido en Acapulco
+    - Visita de ciudad
+    - Paseo en Yate con barra libre(sin traslados)
+    - Traslados terrestre de México a Acapulco
+    - Boleto Acapulco/México
+    - "Traslados hotel/estación Acapulco, estación/apto en México"
+    - Impuestos de hotel
+
+canada-fascinante:  
+  title: Canada fascinante
+  pais: canada
+  imagen: m_slide_2
+  precio: 600
+  descripcion: Esta es la descripción de Canada Fascinante
+  incluye:
+    - Boleto aéreo San José/México/San José
+    - Traslados Aeropuerto/Hotel/Aeropuerto
+    - 4 noches México D.F./1 NOCHE Taxco/2 noches Acapulco
+    - Desayunos
+    - Alimentación todo incluido en Acapulco
+    - Visita de ciudad
+    - Paseo en Yate con barra libre(sin traslados)
+    - Traslados terrestre de México a Acapulco
+    - Boleto Acapulco/México
+    - "Traslados hotel/estación Acapulco, estación/apto en México"
+    - Impuestos de hotel
+
+uruguay:  
+  title: Uruguay fascinante
+  pais: uruguay
+  imagen: m_slide_2
+  precio: 400
+  descripcion: Esta es la descripción de Uruguay Fascinante
+  incluye:
+    - Boleto aéreo San José/México/San José
+    - Traslados Aeropuerto/Hotel/Aeropuerto
+    - 4 noches México D.F./1 NOCHE Taxco/2 noches Acapulco
+    - Desayunos
+    - Alimentación todo incluido en Acapulco
+    - Visita de ciudad
+    - Paseo en Yate con barra libre(sin traslados)
+    - Traslados terrestre de México a Acapulco
+    - Boleto Acapulco/México
+    - "Traslados hotel/estación Acapulco, estación/apto en México"
+    - Impuestos de hotel
+
+otro-paquete:  
+  title: Otro paquete
+  pais: holanda
+  imagen: m_slide_2
+  precio: 300
+  descripcion: Esta es la descripción de Uruguay Fascinante
+  incluye:
+    - Boleto aéreo San José/México/San José
+    - Traslados Aeropuerto/Hotel/Aeropuerto
+    - 4 noches México D.F./1 NOCHE Taxco/2 noches Acapulco
+    - Desayunos
+    - Alimentación todo incluido en Acapulco
+    - Visita de ciudad
+    - Paseo en Yate con barra libre(sin traslados)
+    - Traslados terrestre de México a Acapulco
+    - Boleto Acapulco/México
+    - "Traslados hotel/estación Acapulco, estación/apto en México"
+    - Impuestos de hotel
+
+un-paquete-mas:  
+  title: Un paquete más
+  pais: alemania
+  imagen: m_slide_2
+  precio: 1300
+  descripcion: Esta es la descripción de Alemania
+  incluye:
+    - Boleto aéreo San José/México/San José
+    - Traslados Aeropuerto/Hotel/Aeropuerto
+    - 4 noches México D.F./1 NOCHE Taxco/2 noches Acapulco
+    - Desayunos
+    - Alimentación todo incluido en Acapulco
+    - Visita de ciudad
+    - Paseo en Yate con barra libre(sin traslados)
+    - Traslados terrestre de México a Acapulco
+    - Boleto Acapulco/México
+    - "Traslados hotel/estación Acapulco, estación/apto en México"
+    - Impuestos de hotel
