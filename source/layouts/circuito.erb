@@ -88,10 +88,9 @@
                       <% circuito.precios.each do |opcion| %>
                         <tr>
                           <td><%= opcion.opcion %></td>
-                          <td><%= circuito.moneda.simbolo %><%= opcion.single_high %></td>
-                          <td><%= circuito.moneda.simbolo %><%= opcion.single_low %></td>
-                          <td><%= circuito.moneda.simbolo %><%= opcion.double if opcion.double.defined? %></td>
-                          <td><%= circuito.moneda.simbolo %><%= opcion.double if opcion.double.defined? %></td>
+                          <td><%= defined?(opcion.single_high)? 'N/A' : circuito.moneda.simbolo + opcion.single_high.to_s %></td>
+                          <td><%= defined?(opcion.single_low)? 'N/A' : circuito.moneda.simbolo + opcion.single_low .to_s%></td>
+
                         </tr>
                       <% end %>
                     </tbody>
