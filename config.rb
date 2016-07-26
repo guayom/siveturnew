@@ -65,7 +65,7 @@ destinos.each do |destino|
 end
 
 destinos_circuitos.each do |destino|
-  proxy "/circuirtos/#{destino.code}.html", "/circuitos/template-destinos.html", :locals => { :destino => destino }, :ignore => true
+  proxy "/circuitos/#{destino.code}.html", "/circuitos/template-destinos.html", :locals => { :destino => destino }, :ignore => true
 end
 
 # Reload the browser automatically whenever files change
