@@ -56,6 +56,13 @@ dato.circuitos.each do |circuito|
   proxy "/circuitos/#{circuito.slug}.html", "/circuitos/template.html", :locals => { :circuito => circuito }, :ignore => true
 end
 
+##index files for destino folders
+destinos = dato.paquetes.collect{ |e| e.destino }.uniq
+
+destinos.each do |destino|
+  proxy "/paquetes/#{destino.code}.html", "/paquetes/template-destinos.html", :locals => { :destino => destino }, :ignore => true
+end
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload

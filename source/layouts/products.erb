@@ -1,10 +1,18 @@
 <% wrap_layout :layout do %>
+<%
+if defined? destino
+  #@paquetes = dato.paquetes.find {|paquete| paquete.destino == destino }
+  @paquetes = dato.paquetes.collect{|a| a.destino == destino}
+else
+  @paquetes = dato.paquetes
+end
+%>
 <div class="inner-banner background-block" style="background-image: url(/images/inner_banner_1.jpg);">
 	<img class="center-image" src="/images/inner_banner_1.jpg" alt="" style="display: none;">
 	<div class="vertical-align">
 		<div class="container">
 			<ul class="banner-breadcrumb color-white clearfix">
-				<li><a class="link-blue-2" href="#">Inicio</a> /</li>
+				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
 				<li><span class="color-blue-2">Paquetes</span></li>
 			</ul>
 			<h2 class="color-white">Nuestros paquetes</h2>
@@ -19,6 +27,8 @@
 		<div class="row">
 			<%= partial "partials/sidebar" %>
 			<div class="col-xs-12 col-sm-8 col-md-9">
+        <%= @paquetes.class %>
+        <%= @paquetes.inspect %>
 
 				<div class="grid-content clearfix">
 					<% dato.paquetes.each do |paquete| %>
