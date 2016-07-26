@@ -22,8 +22,9 @@
           destinos = dato.paquetes.collect{ |e| e.destino }
           %>
           <% destinos.uniq.each do |destino| %>
-            <li><a href="<%= destino.code %>"><%= destino.titulo %></a></li>
+            <li><a href="/paquetes/<%= destino.code %>.html"><%= destino.titulo %></a></li>
           <% end %>
+          <li><a href="/paquetes/">Todos</a></li>
         </ul>
       </li>
     </ul>
