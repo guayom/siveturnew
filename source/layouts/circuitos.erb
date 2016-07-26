@@ -1,4 +1,11 @@
 <% wrap_layout :layout do %>
+<%
+if defined? destino
+  @paquetes = dato.circuitos.select {|a| a.destinos.any? == destino}
+else
+  @paquetes = dato.paquetes
+end
+%>
 <div class="inner-banner background-block" style="background-image: url(/images/inner_banner_1.jpg);">
 	<img class="center-image" src="/images/inner_banner_1.jpg" alt="" style="display: none;">
 	<div class="vertical-align">
@@ -16,7 +23,7 @@
 <div class="list-wrapper bg-grey-2">
 	<div class="container">
 		<div class="row">
-			<%= partial "partials/sidebar" %>
+			<%= partial "partials/sidebar", :locals => { categoria: "circuitos" } %>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 
 				<div class="grid-content clearfix">

@@ -18,13 +18,17 @@
         <a class="cat-drop" href="#">Buscar por país <span class="fr"><%= data.destinos.count %></span></a>
         <ul>
           <%
-          destinos = Array.new
-          destinos = dato.paquetes.collect{ |e| e.destino }
+          if categoria == 'paquetes'
+            @destinos = dato.paquetes.collect{ |e| e.destino }.uniq
+          else
+            @destinos = dato.circuitos.collect{ |e| e.destinos }.flatten.uniq
+          end
           %>
-          <% destinos.uniq.each do |destino| %>
-            <li><a href="/paquetes/<%= destino.code %>.html"><%= destino.titulo %></a></li>
+
+          <% @destinos.each do |destino| %>
+            <li><a href="/<%= categoria %>/<%= destino.code %>.html"><%= destino.titulo %></a></li>
           <% end %>
-          <li><a href="/paquetes/">Todos</a></li>
+          <li><a href="/<%= categoria %>/">Todos</a></li>
         </ul>
       </li>
     </ul>

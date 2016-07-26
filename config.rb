@@ -58,9 +58,14 @@ end
 
 ##index files for destino folders
 destinos = dato.paquetes.collect{ |e| e.destino }.uniq
+destinos_circuitos = dato.circuitos.collect{ |e| e.destinos }.flatten.uniq
 
 destinos.each do |destino|
   proxy "/paquetes/#{destino.code}.html", "/paquetes/template-destinos.html", :locals => { :destino => destino }, :ignore => true
+end
+
+destinos_circuitos.each do |destino|
+  proxy "/circuirtos/#{destino.code}.html", "/circuitos/template-destinos.html", :locals => { :destino => destino }, :ignore => true
 end
 
 # Reload the browser automatically whenever files change
