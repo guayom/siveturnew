@@ -10,9 +10,9 @@
               .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.col-sm-12.col-xs-12
                 .main-title
                   %h1.color-white.delay-1 ¿Dónde quieres ir?
-                  %form{:action => "#"}
+                  %form#site_search{:action => "get"}
                     .input-style-1
-                      %input{:placeholder => "Escribe tu destino", :required => "", :type => "text"}
+                      %input#search_box{:placeholder => "Escribe tu destino", :required => "", :type => "text"}
                     %button.c-button.bg-dr-blue.hv-transparent{:type => "submit"}
                       %img{:alt => "", :src => ""}
                         %span Buscar
