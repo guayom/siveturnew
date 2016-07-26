@@ -2,6 +2,11 @@
   <% dato.paquetes.each do |paquete| %>
     "<%= paquete.slug %>": {
       "title": "<%= paquete.titulo %>"
-    }<% unless paquete == dato.paquetes.last %>, <% end %>
+    }
+  <% end %>
+  <% dato.circuitos.each do |circuito| %>
+    "<%= circuito.slug %>": {
+      "title": "<%= circuito.titulo %>"
+    }<% unless circuito == dato.circuito.last %>, <% end %>
   <% end %>
 }
