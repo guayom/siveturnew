@@ -1,8 +1,7 @@
 <% wrap_layout :layout do %>
 <%
 if defined? destino
-  #@paquetes = dato.paquetes.find {|paquete| paquete.destino == destino }
-  @paquetes = dato.paquetes.collect{|a| a.destino == destino}
+  @paquetes = dato.paquetes.select {|a| a.destino.code == destino.code}
 else
   @paquetes = dato.paquetes
 end
@@ -27,11 +26,8 @@ end
 		<div class="row">
 			<%= partial "partials/sidebar" %>
 			<div class="col-xs-12 col-sm-8 col-md-9">
-        <%= @paquetes.class %>
-        <%= @paquetes.inspect %>
-
 				<div class="grid-content clearfix">
-					<% dato.paquetes.each do |paquete| %>
+					<% @paquetes.each do |paquete| %>
 
 						<div class="list-item-entry">
 			        <div class="hotel-item style-3 bg-white">
