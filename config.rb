@@ -36,6 +36,10 @@ helpers do
     #'/images/test' + path
   end
 
+  def imagen_slug(title)
+    title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  end
+
 end
 
 activate :dato,
@@ -66,6 +70,11 @@ end
 
 destinos_circuitos.each do |destino|
   proxy "/circuitos/#{destino.code}.html", "/circuitos/template-destinos.html", :locals => { :destino => destino }, :ignore => true
+end
+
+dato.excursiones_programadas.each do |excursion|
+  titulo = excursion.titulo.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  proxy "/excursiones-programadas/#{titulo}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:excursion => excursion}, :ignore => true
 end
 
 # Reload the browser automatically whenever files change

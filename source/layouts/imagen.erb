@@ -1,0 +1,22 @@
+<% wrap_layout :layout do %>
+  <div class="inner-banner background-block" style="background-image: url(/images/inner_banner_1.jpg);">
+  	<img class="center-image" src="/images/inner_banner_1.jpg" alt="" style="display: none;">
+  	<div class="vertical-align">
+  		<div class="container">
+  			<ul class="banner-breadcrumb color-white clearfix">
+  				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
+          <li><a class="link-blue-2" href="/excursiones-programadas/">Excursiones Programadas</a></li>
+  			</ul>
+  			<h2 class="color-white"><%= excursion.titulo %></h2>
+  			<% cantidad_paquetes = dato.paquetes.count %>
+  		</div>
+  	</div>
+  </div>
+  <div class="list-wrapper bg-grey-2">
+  	<div class="container">
+  		<div class="row text-center excursiones-imagen">
+        <%= image_tag excursion.imagen.file.width(900).to_url %>
+      </div>
+    </div>
+  </div>
+<% end %>
