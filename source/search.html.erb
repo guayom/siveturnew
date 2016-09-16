@@ -1,0 +1,43 @@
+---
+layout: layout
+---
+<% content_for :js do %>
+  <%= javascript_include_tag 'lunr.min' %>
+  <%= javascript_include_tag 'search' %>
+<% end %>
+<div class="inner-banner background-block" style="background-image: url(/images/inner_banner_1.jpg);">
+	<img class="center-image" src="/images/inner_banner_1.jpg" alt="" style="display: none;">
+	<div class="vertical-align">
+		<div class="container">
+			<h2 class="color-white">Resultados de búsqueda</h2>
+      <form action="/search.html" method="GET">
+        <div class="input-style-1">
+          <input name="query" placeholder="Escribe tu destino" required="" type="text" id="search-box">
+        </div>
+        <button class="c-button bg-dr-blue hv-transparent" type="submit">
+          <img alt="" src="">
+            <span>Buscar</span>
+        </button>
+      </form>
+		</div>
+	</div>
+</div>
+<div class="list-wrapper bg-grey-2">
+	<div class="container">
+		<div class="row text-center excursiones-imagen">
+      <ul id="search-results"></ul>
+    </div>
+  </div>
+</div>
+<script>
+  window.store = {
+    <% dato.paquetes.each_with_index do |paquete, index| %>
+      "/paquetes/<%= paquete.destino.code %>/<%= paquete.slug %>.html": {
+        "title": "<%= paquete.titulo %>",
+        "body": "<%= paquete.titulo %>",
+        "url": "/paquetes/<%= paquete.destino.code %>/<%= paquete.slug %>.html"
+      }
+      <% unless index == dato.paquetes.size - 1 %>,<% end %>
+    <% end %>
+  };
+</script>
