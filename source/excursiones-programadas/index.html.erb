@@ -18,26 +18,38 @@ layout: layout
 	</div>
 </div>
 
-<div class="main-wraper padd-70-70">
+<div class="list-wrapper bg-grey-2">
 	<div class="container">
-		<div class="filter-content row" style="position: relative; height: 365.234px;">
-			<div class="grid-sizer col-mob-12 col-xs-6 col-sm-2"></div>
-			<% dato.excursiones_programadas.each do |item| %>
-					<div class="item gal-item style-3 col-mob-12 col-xs-6 col-sm-4" style="position: absolute; left: 0px; top: 0px;">
-						<a class="black-hover" href="/excursiones-programadas/<%= item.slug %>.html">
-							<div class="gal-item-icon">
-                <%= image_tag item.imagen.file.width(360).height(215).fit('crop').to_url %>
-								<div class="tour-layer delay-1"></div>
-								<div class="vertical-align">
-								</div>
-							</div>
-							<div class="gal-item-desc delay-1">
-								<h4><b><%= item.titulo %></b></h4>
-							</div>
-						</a>
-					</div>
-			<% end %>
+		<div class="row">
 
+			<div class="col-xs-12">
+
+				<div class="grid-content clearfix">
+					<% dato.excursiones_programadas.each do |paquete| %>
+
+						<div class="list-item-entry">
+			        <div class="hotel-item style-3 bg-white">
+			        	<div class="table-view">
+			          	<div class="radius-top cell-view">
+			          	<% unless paquete.imagen.nil? %>
+			          	 	<%= image_tag paquete.imagen.file.width(360).height(170).fit('crop').crop('top').to_url %>
+			          	<% end %>
+			          	</div>
+			          	<div class="title hotel-middle clearfix cell-view">
+			          	    <h4><b><%= paquete.titulo %></b></h4>
+				            </div>
+			            <div class="title hotel-right clearfix cell-view">
+		            		<br/>
+										<a class="c-button b-40 bg-blue hv-blue-o grid-hidden" href="/circuitos/<%= paquete.slug %>.html" style="display:block;">Más detalles</a>
+			            </div>
+		            </div>
+			        </div>
+		        </div>
+
+	        <% end %>
+				</div>
+
+			</div>
 		</div>
 	</div>
 </div>
