@@ -25,21 +25,21 @@ title: Contacto
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-8">
-				<form class="contact-form js-contact-form" action="mail.php" method="POST">
+				<form class="contact-form js-contact-form" action="https://formspree.io/aviancatours@siveturcr.com" method="POST">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6">
 							<div class="input-style-1 type-2 color-2">
-							  	<input type="text" name="fields[name]" required="" placeholder="Nombre completo">
+							  	<input type="text" name="nombre" required="" placeholder="Nombre completo">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
 							<div class="input-style-1 type-2 color-2">
-							  	<input type="email" name="fields[email]" required="" placeholder="Correo electrónico">
+							  	<input type="email" name="_replyto" required="" placeholder="Correo electrónico">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
 							<div class="input-style-1 type-2 color-2">
-							  	<input type="text" name="fields[subject]" required="" placeholder="Asunto">
+							  	<input type="text" name="asunto" required="" placeholder="Asunto">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
@@ -54,11 +54,13 @@ title: Contacto
 							   	</div>
 							</div>
 						</div>
+            <input type="hidden" name="_next" value="/gracias.html" />
+            <input type="hidden" name="_subject" value="Contacto desde el sitio web!" />
+            <input type="text" name="_gotcha" style="display:none" />
 						<div class="col-xs-12">
 							<textarea class="area-style-1 color-1" name="fields[text]" required="" placeholder="Su mensaje"></textarea>
 							<button type="submit" class="c-button bg-dr-blue-2 hv-dr-blue-2-o"><span>Enviar mensaje</span></button>
 						</div>
-						<input type="hidden" name="fields[code]" value="56345678safs_">
 					</div>
 				</form>
 				<div class="ajax-result">
