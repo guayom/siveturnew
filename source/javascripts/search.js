@@ -8,7 +8,7 @@
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
         appendString += '<li><a href="'+item.url+'"><h3>' + item.title + '</h3></a>';
-        appendString += '<p>' + item.body.substring(0, 150) + '...</p></li>';
+        appendString += '<p>' + item.category + '</p></li><br/>';
       }
 
       searchResults.innerHTML = appendString;
@@ -40,17 +40,15 @@
     var idx = lunr(function () {
       this.field('id');
       this.field('title', { boost: 10 });
-      this.field('body');
+      //this.field('category');
     });
-
-    console.log('displaying search term... ttt' + key)
 
     // Add the data to lunr
     for (var key in window.store) {
       idx.add({
         'id': key,
         'title': window.store[key].title,
-        'body': window.store[key].content
+        'category': window.store[key].category
       });
 
       var results = idx.search(searchTerm); // Get lunr to perform a search

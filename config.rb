@@ -73,8 +73,7 @@ destinos_circuitos.each do |destino|
 end
 
 dato.excursiones_programadas.each do |excursion|
-  titulo = excursion.titulo.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-  proxy "/excursiones-programadas/#{titulo}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:excursion => excursion}, :ignore => true
+  proxy "/excursiones-programadas/#{excursion.slug}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:excursion => excursion}, :ignore => true
 end
 
 # Reload the browser automatically whenever files change

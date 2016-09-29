@@ -24,7 +24,7 @@ layout: layout
 			<div class="grid-sizer col-mob-12 col-xs-6 col-sm-2"></div>
 			<% dato.excursiones_programadas.each do |item| %>
 					<div class="item gal-item style-3 col-mob-12 col-xs-6 col-sm-4" style="position: absolute; left: 0px; top: 0px;">
-						<a class="black-hover" href="/excursiones-programadas/<%= imagen_slug(item.titulo)%>.html">
+						<a class="black-hover" href="/excursiones-programadas/<%= item.slug %>.html">
 							<div class="gal-item-icon">
                 <%= image_tag item.imagen.file.width(360).height(215).fit('crop').to_url %>
 								<div class="tour-layer delay-1"></div>

@@ -31,10 +31,24 @@ layout: layout
 </div>
 <script>
   window.store = {
+    <% dato.excursiones_programadas.each_with_index do |excursion, index| %>
+      "/excursiones-programadas/<%= excursion.slug %>": {
+        "title": "<%= excursion.titulo %>",
+        "category": "Excursion",
+        "url": "/excursiones-programadas/<%= excursion.slug %>.html"
+      },
+    <% end %>
+    <% dato.circuitos.each_with_index do |circuito, index| %>
+      "/circuitos/<%= circuito.slug %>": {
+        "title": "<%= circuito.titulo %>",
+        "category": "Circuito",
+        "url": "/circuitos/<%= circuito.slug %>.html"
+      },
+    <% end %>
     <% dato.paquetes.each_with_index do |paquete, index| %>
       "/paquetes/<%= paquete.destino.code %>/<%= paquete.slug %>.html": {
         "title": "<%= paquete.titulo %>",
-        "body": "<%= paquete.titulo %>",
+        "category": "Paquete",
         "url": "/paquetes/<%= paquete.destino.code %>/<%= paquete.slug %>.html"
       }
       <% unless index == dato.paquetes.size - 1 %>,<% end %>
