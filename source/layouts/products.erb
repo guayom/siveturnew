@@ -28,7 +28,7 @@ end
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<div class="grid-content clearfix">
 					<% @paquetes.each do |paquete| %>
-
+            <% unless paquete.destino.codigo == "CRC" %>
 						<div class="list-item-entry">
 			        <div class="hotel-item style-3 bg-white">
 			        	<div class="table-view">
@@ -54,7 +54,7 @@ end
 		            </div>
 			        </div>
 		        </div>
-
+            <% end %>
 	        <% end %>
 				</div>
 
