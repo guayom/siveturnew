@@ -1,0 +1,37 @@
+.top-baner.swiper-animate.arrows
+  .swiper-container.main-slider{"data-autoplay" => "5000", "data-center" => "0", "data-loop" => "1", "data-slides-per-view" => "1", "data-speed" => "900"}
+    .swiper-wrapper
+      - dato.slides.each_with_index do |slide, index|
+        .swiper-slide.active{"data-val" => "0"}
+          .clip
+            .bg.bg-bg-chrome.act{:style => "background-image:url(#{slide.imagen.file.width(1440).height(800).fit('crop').bm("normal").balph(50).blend("000000").to_url})"}
+          .vertical-align
+            .container
+              .row
+                .col-md-12
+                  .main-title.vert-title
+                    %h1.color-white.delay-1
+                      = slide.titulo
+                    %p.color-white-op.delay-2= slide.subtitulo
+                    %a.c-button.bg-aqua.hv-transparent.delay-2{:href => "#{slide.link}"}
+                      %img{:alt => "", :src => "/images/loc_icon.png"}/
+                      %span Ver paquete
+    .pagination.pagination-hidden.poin-style-1
+  .arrow-wrapp.m-200
+    .cont-1170
+      .swiper-arrow-left.sw-arrow
+        %span.fa.fa-angle-left
+      .swiper-arrow-right.sw-arrow
+        %span.fa.fa-angle-right
+    .tab-content.tpl-tabs-cont.section-text.t-con-style-1
+      #one.tab-pane.active.in
+        .container
+          .row
+            %form{:action => "/search.html", :method => 'GET'}
+              .col-xs-10
+                .input-style-1
+                  %input{:placeholder => "Escribe tu destino", :required => "", :type => "text", :name => 'query'}
+              .col-xs-22
+                %button.c-button.bg-dr-blue.hv-transparent{:type => "submit"}
+                  %img{:alt => "", :src => ""}
+                    %span Buscar

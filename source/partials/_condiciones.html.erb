@@ -1,13 +1,8 @@
 <div class="condiciones">
   <h4>Condiciones:</h4>
   <ul>
-    <li>Precios por persona en USD americanos</li>
-    <li>Sujetos a disponibilidad y cambios sin previo aviso.</li>
-    <li>Tarifa no reembolsable, ni transferible ni endosable.</li>
-    <li>Aplican penalidades por cambio de fechas una vez emitido el tiquete aéreo.</li>
-    <li>Se requiere pasaporte con más de 6 meses de vigencia.</li>
-    <li>Tarifas no inclyen impuestos aereos</li>
-    <li>Tarifas cotizadas en clase ¨S¨</li>
-    <li>Las tarifas están sujetas a suplementos de acuerdo a las clases disponibles a la hora de reservar.</li>
+    <% condiciones.each do |condicion| %>
+      <li><% condicion.condicion %></li>
+    <% end %>
   </ul>
 </div>
