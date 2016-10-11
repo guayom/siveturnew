@@ -95,17 +95,17 @@
                     <tbody>
                       <tr>
                         <th>Hotel</th>
-                        <th>Sencilla</th>
-                        <th>Doble</th>
                         <th>Triple</th>
+                        <th>Doble</th>
+                        <th>Sencilla</th>
                         <th>Niños</th>
                       </tr>
                       <% paquete.precios.each do |hotel| %>
                         <tr>
                           <td><%= hotel.hotel %></td>
-                          <td>$<%= hotel.sgl %></td>
-                          <td>$<%= hotel.dbl %></td>
                           <td>$<%= hotel.tpl %></td>
+                          <td>$<%= hotel.dbl %></td>
+                          <td>$<%= hotel.sgl %></td>
                           <td>$<%= hotel.chd %></td>
                         </tr>
                       <% end %>
