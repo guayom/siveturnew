@@ -45,7 +45,7 @@ end
 			            <div class="title hotel-right clearfix cell-view">
                     <%
                     precios = Array.new
-                    precios = paquete.precios.collect{ |e| e.sgl }
+                    precios = paquete.precios.collect{ |e| e.tpl }
                     %>
 		            		<div class="hotel-person color-dark-2">desde <span class="color-blue"><%= paquete.moneda.simbolo %><%= precios.compact.min %></span> persona</div>
 		            		<br/>
