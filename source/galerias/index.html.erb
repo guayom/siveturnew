@@ -20,35 +20,32 @@ layout: layout
 
 <div class="main-wraper padd-70-70">
 	<div class="container">
-	    <div class="filter style-2">
+	    <!-- <div class="filter style-2">
 	        <ul class="filter-nav">
 	            <li class="selected" class=""><a href="#all" data-filter="*">todos</a></li>
 							<% data.galeria.each do |key, value| %>
 								<li><a href="#<%= key %>" data-filter=".<%= key %>"><%= key %></a></li>
 							<% end %>
 	        </ul>
-	    </div>
+	    </div> -->
 
 		<div class="filter-content row" style="position: relative; height: 365.234px;">
 			<div class="grid-sizer col-mob-12 col-xs-6 col-sm-2"></div>
-			<% data.galeria.each do |item| %>
-					<% item[1].each do |imagen| %>
-					<div class="item <%= item[0] %> gal-item style-3 col-mob-12 col-xs-6 col-sm-4" style="position: absolute; left: 0px; top: 0px;">
-						<a class="black-hover" href="#">
-							<div class="gal-item-icon">
-								<img class="img-full img-responsive" src="/images/galeria/<%= item[0] %>/<%= imagen['url'] %>" alt="">
-								<div class="tour-layer delay-1"></div>
-								<div class="vertical-align">
-									<!--<span class="c-button small bg-white delay-2"><span>view more</span></span>-->
-								</div>
+			<% dato.galerias.each do |galeria| %>
+				<div class="item gal-item style-3 col-mob-12 col-xs-6 col-sm-4" style="position: absolute; left: 0px; top: 0px;">
+					<a class="black-hover" href="<%= galeria.slug %>">
+						<div class="gal-item-icon">
+							<img class="img-full img-responsive" src="<%= galeria.portada.file.width(360).height(202).fit('crop').to_url %>" alt="">
+							<div class="tour-layer delay-1"></div>
+							<div class="vertical-align">
+								<!--<span class="c-button small bg-white delay-2"><span>view more</span></span>-->
 							</div>
-							<div class="gal-item-desc delay-1">
-								<h4><b><%= imagen['title'] %></b></h4>
-								<h5><%= imagen['subtitle'] %></h5>
-							</div>
-						</a>
-					</div>
-					<% end %>
+						</div>
+						<div class="gal-item-desc delay-1">
+							<h4><b><%= galeria.titulo %></b></h4>
+						</div>
+					</a>
+				</div>
 			<% end %>
 
 		</div>

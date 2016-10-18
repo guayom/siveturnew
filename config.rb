@@ -76,6 +76,10 @@ dato.excursiones_programadas.each do |excursion|
   proxy "/excursiones-programadas/#{excursion.slug}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:excursion => excursion}, :ignore => true
 end
 
+dato.galerias.each do |galeria|
+  proxy "/galerias/#{galeria.slug}.html", "/galerias/galeria-template.html", :locals =>{:galeria => galeria}, :ignore => true
+end
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
