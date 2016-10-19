@@ -9,9 +9,9 @@ layout: layout
 				<div class="col-xs-12 col-md-8 col-md-offset-2">
 		  			<ul class="banner-breadcrumb color-white clearfix">
 		  				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
-		  				<li><span>Galería</span></li>
+		  				<li><a class="link-blue-2" href="/galerias/">Galerías</a></li>
 		  			</ul>
-		  			<h2 class="color-white">galería</h2>
+		  			<h2 class="color-white"><%= galeria.titulo %></h2>
   				</div>
 			</div>
 		</div>
@@ -35,7 +35,7 @@ layout: layout
 				<div class="item gal-item style-3 col-mob-12 col-xs-6 col-sm-4" style="position: absolute; left: 0px; top: 0px;">
 					<a class="black-hover" href="#">
 						<div class="gal-item-icon">
-							<img class="img-full img-responsive" src="<%= imagen.file.width(360).height(202).fit('crop').to_url %>" alt="">
+							<img class="img-full img-responsive" src="<%= imagen.imagen.file.width(360).height(202).fit('crop').to_url %>" alt="">
 							<div class="tour-layer delay-1"></div>
 							<div class="vertical-align">
 								<!--<span class="c-button small bg-white delay-2"><span>view more</span></span>-->
@@ -43,7 +43,7 @@ layout: layout
 						</div>
 						<div class="gal-item-desc delay-1">
 							<h4><b><%= imagen.titulo %></b></h4>
-              <h5><b><%= imagen.sub_titulo %></b></h5>
+              <h5><b><%= imagen.descripcion %></b></h5>
 						</div>
 					</a>
 				</div>

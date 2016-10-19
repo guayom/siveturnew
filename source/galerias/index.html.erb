@@ -9,9 +9,9 @@ layout: layout
 				<div class="col-xs-12 col-md-8 col-md-offset-2">
 		  			<ul class="banner-breadcrumb color-white clearfix">
 		  				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
-		  				<li><span>Galería</span></li>
+		  				<li><span>Galerías</span></li>
 		  			</ul>
-		  			<h2 class="color-white">galería</h2>
+		  			<h2 class="color-white">galerías</h2>
   				</div>
 			</div>
 		</div>
@@ -33,7 +33,7 @@ layout: layout
 			<div class="grid-sizer col-mob-12 col-xs-6 col-sm-2"></div>
 			<% dato.galerias.each do |galeria| %>
 				<div class="item gal-item style-3 col-mob-12 col-xs-6 col-sm-4" style="position: absolute; left: 0px; top: 0px;">
-					<a class="black-hover" href="<%= galeria.slug %>">
+					<a class="black-hover" href="<%= galeria.slug %>.html">
 						<div class="gal-item-icon">
 							<img class="img-full img-responsive" src="<%= galeria.portada.file.width(360).height(202).fit('crop').to_url %>" alt="">
 							<div class="tour-layer delay-1"></div>
@@ -47,7 +47,6 @@ layout: layout
 					</a>
 				</div>
 			<% end %>
-
 		</div>
 	</div>
 </div>
