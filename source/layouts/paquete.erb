@@ -28,7 +28,7 @@
     		    <div class="col-xs-12 col-sm-4">
               <%
               precios = Array.new
-              precios = paquete.precios.collect{ |e| e.sgl }
+              precios = paquete.precios.collect{ |e| e.tpl }
               %>
     		    	<div class="detail-price color-dark-2">Precios desde <span class="color-dr-blue"> <%= paquete.moneda.simbolo %><%= precios.compact.min %></span> /persona</div>
     		    </div>
@@ -95,17 +95,17 @@
                     <tbody>
                       <tr>
                         <th>Hotel</th>
-                        <th>Triple</th>
-                        <th>Doble</th>
                         <th>Sencilla</th>
+                        <th>Doble</th>
+                        <th>Triple</th>
                         <th>Niños</th>
                       </tr>
                       <% paquete.precios.each do |hotel| %>
                         <tr>
                           <td><%= hotel.hotel %></td>
-                          <td>$<%= hotel.tpl %></td>
-                          <td>$<%= hotel.dbl %></td>
                           <td>$<%= hotel.sgl %></td>
+                          <td>$<%= hotel.dbl %></td>
+                          <td>$<%= hotel.tpl %></td>
                           <td>$<%= hotel.chd %></td>
                         </tr>
                       <% end %>
