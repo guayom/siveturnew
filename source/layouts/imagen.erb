@@ -5,17 +5,17 @@
   		<div class="container">
   			<ul class="banner-breadcrumb color-white clearfix">
   				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
-          <li><a class="link-blue-2" href="/excursiones-programadas/">Excursiones Programadas</a></li>
+          <li><a class="link-blue-2" href="/excursiones-programadas/"><%= current_page.data.section %></a></li>
   			</ul>
-  			<h2 class="color-white"><%= excursion.titulo %></h2>
-  			<% cantidad_paquetes = dato.paquetes.count %>
+  			<h2 class="color-white"><%= item.titulo %></h2>
   		</div>
   	</div>
   </div>
   <div class="list-wrapper bg-grey-2">
   	<div class="container">
   		<div class="row text-center excursiones-imagen">
-        <%= image_tag excursion.imagen.file.width(900).to_url %>
+        <%= image_tag item.imagen.file.width(900).to_url %>
+        <%= yield %>
       </div>
     </div>
   </div>

@@ -1,0 +1,9 @@
+---
+layout: products
+title: Ofertas
+---
+<% dato.ofertas.each do |oferta| %>
+  <% link = "/ofertas/#{oferta.slug}.html"  %>
+
+  <%= partial "partials/producto", :locals => { titulo: oferta.titulo, link: link, thumbnail: oferta.imagen, descripcion: nil  } %>
+<% end %>

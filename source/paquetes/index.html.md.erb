@@ -1,3 +1,14 @@
 ---
 layout: products
+title: Paquetes
 ---
+<% dato.paquetes.each do |paquete| %>
+  <%
+  precios = Array.new
+  precios = paquete.precios.collect{ |e| e.tpl }
+  descripcion = "desde <span class='color-blue'>#{paquete.moneda.simbolo}#{precios.compact.min}</span> persona"
+  link = "/paquetes/#{paquete.destino.code}/#{paquete.slug}.html"
+  %>
+
+  <%= partial "partials/producto", :locals => { titulo: paquete.titulo, descripcion: descripcion, link: link, thumbnail: paquete.thumbnail} %>
+<% end %>

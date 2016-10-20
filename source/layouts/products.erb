@@ -1,68 +1,29 @@
 <% wrap_layout :layout do %>
-<%
-if defined? destino
-  @paquetes = dato.paquetes.select {|a| a.destino.code == destino.code}
-else
-  @paquetes = dato.paquetes
-end
-%>
-<div class="inner-banner background-block" style="background-image: url(/images/inner_banner_1.jpg);">
-	<img class="center-image" src="/images/inner_banner_1.jpg" alt="" style="display: none;">
-	<div class="vertical-align">
-		<div class="container">
-			<ul class="banner-breadcrumb color-white clearfix">
-				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
-				<li><span class="color-blue-2">Paquetes</span></li>
-			</ul>
-			<h2 class="color-white">Nuestros paquetes</h2>
-			<% cantidad_paquetes = dato.paquetes.count %>
-			<h4 class="color-white">Actualmente contamos con: <span><%= cantidad_paquetes %></span> paquete<% if cantidad_paquetes > 1 %>s<% end %></h4>
-		</div>
-	</div>
-</div>
+  <div class="inner-banner background-block" style="background-image: url(/images/inner_banner_1.jpg);">
+  	<img class="center-image" src="/images/inner_banner_1.jpg" alt="" style="display: none;">
+  	<div class="vertical-align">
+  		<div class="container">
+  			<ul class="banner-breadcrumb color-white clearfix">
+  				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
+  				<li><span class="color-blue-2"><%= current_page.data.title %></span></li>
+  			</ul>
+  			<h2 class="color-white"><%= current_page.data.title %></h2>
+  			<% cantidad_paquetes = dato.paquetes.count %>
+  			<!-- <h4 class="color-white">Actualmente contamos con: <span><%= cantidad_paquetes %></span> paquete<% if cantidad_paquetes > 1 %>s<% end %></h4> -->
+  		</div>
+  	</div>
+  </div>
 
-<div class="list-wrapper bg-grey-2">
-	<div class="container">
-		<div class="row">
-			<%= partial "partials/sidebar", :locals => { categoria: "paquetes" } %>
-			<div class="col-xs-12 col-sm-8 col-md-9">
-				<div class="grid-content clearfix">
-					<% @paquetes.each do |paquete| %>
-            <% unless paquete.destino.code == "CRC" %>
-						<div class="list-item-entry">
-			        <div class="hotel-item style-3 bg-white">
-			        	<div class="table-view">
-			          	<div class="radius-top cell-view">
-			          	<% unless paquete.thumbnail.nil? %>
-			          	 	<%= image_tag paquete.thumbnail.file.width(280).height(210).fit('crop').to_url %>
-			          	<% end %>
-			          	</div>
-			          	<div class="title hotel-middle clearfix cell-view">
-			          	 	<div class="date grid-hidden"><strong>19.07 - 26.07 / 7</strong> night</div>
-			          	    <h4><b><%= paquete.titulo %></b></h4>
-					            <!--<p class="f-14 grid-hidden"><%= truncate_words(paquete.descripcion, :length => 20) %></p>-->
-				            </div>
-			            <div class="title hotel-right clearfix cell-view">
-                    <%
-                    precios = Array.new
-                    precios = paquete.precios.collect{ |e| e.tpl }
-                    %>
-		            		<div class="hotel-person color-dark-2">desde <span class="color-blue"><%= paquete.moneda.simbolo %><%= precios.compact.min %></span> persona</div>
-		            		<br/>
-										<a class="c-button b-40 bg-blue hv-blue-o grid-hidden" href="/paquetes/<%= paquete.destino.code %>/<%= paquete.slug %>.html" style="display:block;">Más detalles</a>
-			            </div>
-		            </div>
-			        </div>
-		        </div>
-            <% end %>
-	        <% end %>
-				</div>
-
-			</div>
-		</div>
-	</div>
-</div>
-
-    <%= yield %>
-
+  <div class="list-wrapper bg-grey-2">
+  	<div class="container">
+  		<div class="row">
+  			<%= partial "partials/sidebar", :locals => { categoria: "paquetes" } %>
+  			<div class="col-xs-12 col-sm-8 col-md-9">
+  				<div class="grid-content clearfix">
+  					<%= yield %>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
 <% end %>

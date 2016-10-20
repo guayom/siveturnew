@@ -73,11 +73,15 @@ destinos_circuitos.each do |destino|
 end
 
 dato.excursiones_programadas.each do |excursion|
-  proxy "/excursiones-programadas/#{excursion.slug}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:excursion => excursion}, :ignore => true
+  proxy "/excursiones-programadas/#{excursion.slug}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:item => excursion}, :ignore => true
 end
 
 dato.galerias.each do |galeria|
   proxy "/galerias/#{galeria.slug}.html", "/galerias/galeria-template.html", :locals =>{:galeria => galeria}, :ignore => true
+end
+
+dato.ofertas.each do |oferta|
+  proxy "/ofertas/#{oferta.slug}.html", "/ofertas/oferta-template.html", :locals =>{:item => oferta}, :ignore => true
 end
 
 # Reload the browser automatically whenever files change
