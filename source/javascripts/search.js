@@ -7,8 +7,13 @@
 
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
-        appendString += '<li><a href="'+item.url+'"><h3>' + item.title + '</h3></a>';
-        appendString += '<p>' + item.category + '</p></li><br/>';
+        appendString += '<div class="list-item-entry"><div class="hotel-item style-3 bg-white"><div class="table-view">';
+        appendString += '<div class="radius-top cell-view">'+item.image+'</div>';
+        appendString += '<div class="title hotel-middle clearfix cell-view"><h4><b>' + item.title + '</b></h4></div>';
+        appendString += '<div class="title hotel-right clearfix cell-view">';
+        appendString += '<div class="hotel-person color-dark-2">' + item.category + '</div><br/>';
+        appendString += '<a class="c-button b-40 bg-blue hv-blue-o grid-hidden" href="'+item.url+'" style="display:block;">Más detalles</a>';
+        appendString += "</div></div></div></div>";
       }
 
       searchResults.innerHTML = appendString;
@@ -40,6 +45,7 @@
     var idx = lunr(function () {
       this.field('id');
       this.field('title', { boost: 10 });
+      this.field('pais', { boost: 20 });
       //this.field('category');
     });
 
@@ -48,7 +54,8 @@
       idx.add({
         'id': key,
         'title': window.store[key].title,
-        'category': window.store[key].category
+        'category': window.store[key].category,
+        'pais': window.store[key].pais
       });
 
       var results = idx.search(searchTerm); // Get lunr to perform a search
