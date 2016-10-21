@@ -23,8 +23,8 @@
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			   <div class="footer-block">
             <h6>Destinos</h6>
-            <% data.destinos.each do |key, value| %>
-			        <a href="/paquetes/<%= key %>/" class="tags-b"><%= value %></a>
+            <% dato.paquetes.collect{|e| e.pais}.uniq.each do |pais| %>
+			        <a href="/paquetes/<%= to_slug(pais) %>/" class="tags-b"><%= pais %></a>
             <% end %>
 		   </div>
 		</div>
