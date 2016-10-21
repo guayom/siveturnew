@@ -1,8 +1,8 @@
 ---
 layout: products
-title: Paquetes
+section: paquetes
 ---
-<% dato.paquetes.each do |paquete| %>
+<% dato.paquetes.select{|a| a.pais == pais}.each do |paquete| %>
   <%
   precios = Array.new
   precios = paquete.precios.collect{ |e| e.tpl }

@@ -40,6 +40,16 @@ helpers do
     title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   end
 
+  def to_slug(string)
+    value = string.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n, '').to_s
+    value.gsub!(/[']+/, '')
+    value.gsub!(/\W+/, ' ')
+    value.strip!
+    value.downcase!
+    value.gsub!(' ', '-')
+    value
+  end
+
 end
 
 activate :dato,
@@ -52,8 +62,22 @@ activate :dato,
 #page "paquetes/*", :layout => :paquete
 
 # General configuration
+def to_slug(string)
+  value = string.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n, '').to_s
+  value.gsub!(/[']+/, '')
+  value.gsub!(/\W+/, ' ')
+  value.strip!
+  value.downcase!
+  value.gsub!(' ', '-')
+  value
+end
+
+dato.paquetes.collect{|e| e.pais}.uniq.each do |pais|
+  proxy "/paquetes/#{to_slug(pais)}/index.html", "/paquetes/template-pais.html", :locals => { :pais => pais }, :ignore => true
+end
+
 dato.paquetes.each do |paquete|
-  proxy "/paquetes/#{paquete.destino.code}/#{paquete.slug}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
+  proxy "/paquetes/#{to_slug(paquete.pais)}/#{paquete.slug}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
 end
 
 dato.circuitos.each do |circuito|
