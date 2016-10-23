@@ -6,6 +6,10 @@ title: Circuitos
   <%= partial "partials/sidebar", :locals => { categoria: 'circuitos', collection: dato.circuitos } %>
 <% end %>
 
+<% content_for(:itemcount) do %>
+  <%= dato.circuitos.count %>
+<% end %>
+
 <% dato.circuitos.each do |circuito| %>
   <%
   precios = Array.new

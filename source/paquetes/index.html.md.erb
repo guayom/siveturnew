@@ -2,6 +2,10 @@
 layout: products
 title: Paquetes
 ---
+<% content_for(:itemcount) do %>
+  <%= dato.paquetes.count %>
+<% end %>
+
 <% content_for(:sidebar) do %>
   <%= partial "partials/sidebar", :locals => { categoria: 'paquetes', collection: dato.paquetes } %>
 <% end %>
