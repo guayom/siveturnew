@@ -5,11 +5,11 @@
   		<div class="container">
   			<ul class="banner-breadcrumb color-white clearfix">
   				<li><a class="link-blue-2" href="/">Inicio</a> /</li>
-  				<li><span class="color-blue-2"><%= current_page.data.section %></span></li>
+  				<li><span class="color-blue-2"><%= current_page.data.title.downcase %></span></li>
   			</ul>
   			<h2 class="color-white"><%= current_page.data.title %></h2>
   			<% cantidad_paquetes = dato.paquetes.count %>
-  			<!-- <h4 class="color-white">Actualmente contamos con: <span><%= cantidad_paquetes %></span> paquete<% if cantidad_paquetes > 1 %>s<% end %></h4> -->
+  			<h4 class="color-white">Actualmente contamos con: <span><%= yield_content(:itemcount) %></span> <%= current_page.data.title.downcase %></h4>
   		</div>
   	</div>
   </div>

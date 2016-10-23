@@ -6,6 +6,10 @@ title: Ofertas
   <%= partial "partials/sidebar", :locals => { categoria: 'ofertas', collection: dato.ofertas } %>
 <% end %>
 
+<% content_for(:itemcount) do %>
+  <%= dato.ofertas.count %>
+<% end %>
+
 <% dato.ofertas.each do |oferta| %>
   <% link = "/ofertas/#{oferta.slug}.html"  %>
 
