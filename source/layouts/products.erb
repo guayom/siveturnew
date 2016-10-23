@@ -17,7 +17,7 @@
   <div class="list-wrapper bg-grey-2">
   	<div class="container">
   		<div class="row">
-  			<%= partial "partials/sidebar", :locals => { categoria: 'circuitos', collection: dato.circuitos } %>
+        <%= yield_content(:sidebar) %>
   			<div class="col-xs-12 col-sm-8 col-md-9">
   				<div class="grid-content clearfix filter-content">
             <div class="grid-sizer col-mob-12 col-xs-6 col-sm-4 no-padding"></div>

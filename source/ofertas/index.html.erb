@@ -2,8 +2,12 @@
 layout: products
 title: Ofertas
 ---
+<% content_for(:sidebar) do %>
+  <%= partial "partials/sidebar", :locals => { categoria: 'ofertas', collection: dato.ofertas } %>
+<% end %>
+
 <% dato.ofertas.each do |oferta| %>
   <% link = "/ofertas/#{oferta.slug}.html"  %>
 
-  <%= partial "partials/producto", :locals => { titulo: oferta.titulo, link: link, thumbnail: oferta.imagen, descripcion: nil  } %>
+  <%= partial "partials/producto", :locals => { titulo: oferta.titulo, link: link, thumbnail: oferta.imagen, descripcion: nil, extraclasses: ""  } %>
 <% end %>

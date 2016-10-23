@@ -2,6 +2,10 @@
 layout: products
 title: Circuitos
 ---
+<% content_for(:sidebar) do %>
+  <%= partial "partials/sidebar", :locals => { categoria: 'circuitos', collection: dato.circuitos } %>
+<% end %>
+
 <% dato.circuitos.each do |circuito| %>
   <%
   precios = Array.new

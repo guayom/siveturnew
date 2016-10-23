@@ -2,14 +2,27 @@
 layout: products
 title: Paquetes
 ---
+<% content_for(:sidebar) do %>
+  <%= partial "partials/sidebar", :locals => { categoria: 'paquetes', collection: dato.paquetes } %>
+<% end %>
+
 <% dato.paquetes.each do |paquete| %>
   <%
   precios = Array.new
   precios = paquete.precios.collect{ |e| e.tpl }
   descripcion = "desde <span class='color-blue'>#{paquete.moneda.simbolo}#{precios.compact.min}</span> persona"
   link = "/paquetes/#{to_slug(paquete.pais)}/#{paquete.slug}.html"
-  #extraclasses = paquete.pais
+  if paquete.pais.nil?
+    extraclases = ""
+  else
+    paises = paquete.pais.split(', ')
+    paises_parms = []
+    paises.each do |pais|
+      paises_parms.push(pais.downcase.parameterize)
+    end
+    extraclasses = paises_parms.join(' ')
+  end
   %>
 
-  <%= partial "partials/producto", :locals => { titulo: paquete.titulo, descripcion: descripcion, link: link, thumbnail: paquete.thumbnail} %>
+  <%= partial "partials/producto", :locals => { titulo: paquete.titulo, descripcion: descripcion, link: link, thumbnail: paquete.thumbnail, extraclasses: extraclasses} %>
 <% end %>
