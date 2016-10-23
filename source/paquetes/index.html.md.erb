@@ -8,6 +8,7 @@ title: Paquetes
   precios = paquete.precios.collect{ |e| e.tpl }
   descripcion = "desde <span class='color-blue'>#{paquete.moneda.simbolo}#{precios.compact.min}</span> persona"
   link = "/paquetes/#{to_slug(paquete.pais)}/#{paquete.slug}.html"
+  #extraclasses = paquete.pais
   %>
 
   <%= partial "partials/producto", :locals => { titulo: paquete.titulo, descripcion: descripcion, link: link, thumbnail: paquete.thumbnail} %>

@@ -26,10 +26,11 @@ end
 			<%= partial "partials/sidebar", :locals => { categoria: "circuitos", collection: @circuitos } %>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 
-				<div class="grid-content clearfix">
+				<div class="grid-content clearfix filter-content">
+          <div class="grid-sizer col-mob-12 col-xs-6 col-sm-4 no-padding"></div>
 					<% @circuitos.each do |paquete| %>
 
-						<div class="list-item-entry">
+						<div class="list-item-entry gal-item item <%= paquete.pais.tr(',', '').downcase unless paquete.pais.nil?%> col-mob-12 col-xs-6 col-sm-4">
 			        <div class="hotel-item style-3 bg-white">
 			        	<div class="table-view">
 			          	<div class="radius-top cell-view">

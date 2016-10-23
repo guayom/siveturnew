@@ -1,3 +1,24 @@
 ---
-layout: circuitos
+layout: products
+title: Circuitos
 ---
+<% dato.circuitos.each do |circuito| %>
+  <%
+  precios = Array.new
+  #precios = circuito.precios.collect{ |e| e.tpl }
+  descripcion = "desde <span class='color-blue'>#{circuito.moneda.simbolo}</span> persona"
+  link = "/circuitos/#{circuito.slug}.html"
+  if circuito.pais.nil?
+    extraclases = ""
+  else
+    paises = circuito.pais.split(', ')
+    paises_parms = []
+    paises.each do |pais|
+      paises_parms.push(pais.downcase.parameterize)
+    end
+    extraclasses = paises_parms.join(' ')
+  end
+  %>
+
+  <%= partial "partials/producto", :locals => { titulo: circuito.titulo, descripcion: descripcion, link: link, thumbnail: circuito.thumbnail, extraclasses: extraclasses} %>
+<% end %>
