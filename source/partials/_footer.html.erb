@@ -24,7 +24,7 @@
 			   <div class="footer-block">
             <h6>Destinos</h6>
             <% dato.paquetes.collect{|e| e.pais}.uniq.each do |pais| %>
-			        <a href="/paquetes/<%= to_slug(pais) %>/" class="tags-b"><%= pais %></a>
+			        <a href="/paquetes/<%= pais.parameterize %>/" class="tags-b"><%= pais %></a>
             <% end %>
 		   </div>
 		</div>
