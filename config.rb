@@ -64,10 +64,6 @@ end
 destinos = dato.paquetes.collect{ |e| e.destino }.uniq
 destinos_circuitos = dato.circuitos.collect{ |e| e.destinos }.flatten.uniq
 
-destinos.each do |destino|
-  proxy "/paquetes/#{destino.code}.html", "/paquetes/template-destinos.html", :locals => { :destino => destino }, :ignore => true
-end
-
 destinos_circuitos.each do |destino|
   proxy "/circuitos/#{destino.code}.html", "/circuitos/template-destinos.html", :locals => { :destino => destino }, :ignore => true
 end
