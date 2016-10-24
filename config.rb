@@ -40,16 +40,6 @@ helpers do
     title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   end
 
-  def to_slug(string)
-    value = string.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n, '').to_s.html_safe
-    value.gsub!(/[']+/, '')
-    value.gsub!(/\W+/, ' ')
-    value.strip!
-    value.downcase!
-    value.gsub!(' ', '-')
-    value
-  end
-
 end
 
 activate :dato,
