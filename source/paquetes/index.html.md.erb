@@ -15,7 +15,7 @@ title: Paquetes
   precios = Array.new
   precios = paquete.precios.collect{ |e| e.tpl }
   descripcion = "desde <span class='color-blue'>#{paquete.moneda.simbolo}#{precios.compact.min}</span> persona"
-  link = "/paquetes/#{to_slug(paquete.pais)}/#{paquete.slug}.html"
+  link = "/paquetes/#{paquete.pais.parameterize}/#{paquete.slug}.html"
   if paquete.pais.nil?
     extraclases = ""
   else

@@ -52,11 +52,6 @@ activate :dato,
 #page "paquetes/*", :layout => :paquete
 
 # General configuration
-
-# dato.paquetes.collect{|e| e.pais}.uniq.each do |pais|
-#   proxy "/paquetes/#{to_slug(pais)}/index.html", "/paquetes/template-pais.html", :locals => { :pais => pais }, :ignore => true
-# end
-
 dato.paquetes.each do |paquete|
   proxy "/paquetes/#{paquete.pais.parameterize}/#{paquete.slug}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
 end
