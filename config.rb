@@ -72,9 +72,9 @@ def to_slug(string)
   value
 end
 
-dato.paquetes.collect{|e| e.pais}.uniq.each do |pais|
-  proxy "/paquetes/#{to_slug(pais)}/index.html", "/paquetes/template-pais.html", :locals => { :pais => pais }, :ignore => true
-end
+# dato.paquetes.collect{|e| e.pais}.uniq.each do |pais|
+#   proxy "/paquetes/#{to_slug(pais)}/index.html", "/paquetes/template-pais.html", :locals => { :pais => pais }, :ignore => true
+# end
 
 dato.paquetes.each do |paquete|
   proxy "/paquetes/#{to_slug(paquete.pais)}/#{paquete.slug}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
