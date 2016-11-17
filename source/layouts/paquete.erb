@@ -27,20 +27,13 @@
        				<div class="detail-top slider-wth-thumbs style-2">
                 <div class="swiper-container thumbnails-preview" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
                   <div class="swiper-wrapper">
-                    <% counter = 0 %>
-                    <% unless paquete.thumbnail.nil? %>
-                      <div class="swiper-slide active" data-val="<%= counter %>">
-               					<%= image_tag paquete.thumbnail.file.width(800).height(600).fit('crop').to_url %>
+                    <div class="swiper-slide active" data-val="1">
+                      <%= image_tag paquete.thumbnail.file.width(800).height(600).fit('crop').to_url %>
+                    </div>
+                    <% paquete.imagenes.each_with_index do |image, index| %>
+                      <div class="swiper-slide" data-val="<%= index + 1 %>">
+                        <%= image_tag image.imagen.file.width(800).height(600).fit('crop').to_url %>
                       </div>
-                      <% counter += 1 %>
-                    <% end %>
-                    <%
-                    files = Dir.glob(config.images_path + 'destinos/' + paquete.destino.code + '/*.{jpg,png,gif,JPG}')
-                    files.each do |image| %>
-                      <div class="swiper-slide <% if counter == 0 %>active<% end %>" data-val="<%= counter %>">
-                        <img class="img-responsive img-full"  src="<%= '/images/destinos/' + paquete.destino.code  + '/' + image.split('/').last %>" />
-                      </div>
-                    <% counter += 1 %>
                     <% end %>
                   </div>
                   <div class="pagination pagination-hidden"></div>
@@ -51,19 +44,13 @@
                 data-sm-slides="5" data-md-slides="5" data-lg-slides="5"
                 data-add-slides="5">
                   <div class="swiper-wrapper">
-                    <% counter2 = 0 %>
-                    <% unless paquete.thumbnail.nil? %>
-                      <div class="swiper-slide current active" data-val="<%= counter2 %>">
-                        <%= image_tag paquete.thumbnail.file.width(150).height(113).fit('crop').to_url, :class => 'img-responsive img-full' %>
+                    <div class="swiper-slide active" data-val="1">
+                      <%= image_tag paquete.thumbnail.file.width(150).height(113).fit('crop').to_url %>
+                    </div>
+                    <% paquete.imagenes.each_with_index do |image, index| %>
+                      <div class="swiper-slide" data-val="<%= index + 1 %>">
+                        <%= image_tag image.imagen.file.width(150).height(113).fit('crop').to_url %>
                       </div>
-                      <% counter2 += 1 %>
-                    <% end %>
-                    <%
-                    files.each do |image| %>
-                      <div class="swiper-slide <% if counter2 == 0 %>current active<% end %>" data-val="<%= counter2 %>">
-                        <img class="img-responsive img-full" src="<%= '/images/destinos/' + paquete.destino.code  + '/' + image.split('/').last %>" />
-                      </div>
-                      <% counter2 += 1 %>
                     <% end %>
                   </div>
                   <div class="pagination hidden"></div>
