@@ -32,7 +32,7 @@
                         <%= image_tag paquete.thumbnail.file.width(800).height(600).fit('crop').to_url %>
                       </div>
                     <% end %>
-                    <% unless paquete.imagenes.any? %>
+                    <% if paquete.imagenes.any? %>
                       <% paquete.imagenes.each_with_index do |image, index| %>
                         <div class="swiper-slide" data-val="<%= index + 1 %>">
                           <%= image_tag image.imagen.file.width(800).height(600).fit('crop').to_url %>
