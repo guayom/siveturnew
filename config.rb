@@ -53,11 +53,11 @@ activate :dato,
 
 # General configuration
 dato.paquetes.each do |paquete|
-  proxy "/paquetes/#{paquete.pais.parameterize}/#{paquete.slug}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
+  proxy "/paquetes/#{paquete.pais.parameterize}/#{paquete.titulo.parameterize}.html", "/paquetes/template.html", :locals => { :paquete => paquete }, :ignore => true
 end
 
 dato.circuitos.each do |circuito|
-  proxy "/circuitos/#{circuito.slug}.html", "/circuitos/template.html", :locals => { :circuito => circuito }, :ignore => true
+  proxy "/circuitos/#{circuito.titulo.parameterize}.html", "/circuitos/template.html", :locals => { :circuito => circuito }, :ignore => true
 end
 
 ##index files for destino folders
@@ -69,15 +69,15 @@ destinos_circuitos.each do |destino|
 end
 
 dato.excursiones_programadas.each do |excursion|
-  proxy "/excursiones-programadas/#{excursion.slug}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:item => excursion}, :ignore => true
+  proxy "/excursiones-programadas/#{excursion.titulo.parameterize}.html", "/excursiones-programadas/excursiones-template.html", :locals =>{:item => excursion}, :ignore => true
 end
 
 dato.galerias.each do |galeria|
-  proxy "/galerias/#{galeria.slug}.html", "/galerias/galeria-template.html", :locals =>{:galeria => galeria}, :ignore => true
+  proxy "/galerias/#{galeria.titulo.parameterize}.html", "/galerias/galeria-template.html", :locals =>{:galeria => galeria}, :ignore => true
 end
 
 dato.ofertas.each do |oferta|
-  proxy "/ofertas/#{oferta.slug}.html", "/ofertas/oferta-template.html", :locals =>{:item => oferta}, :ignore => true
+  proxy "/ofertas/#{oferta.titulo.parameterize}.html", "/ofertas/oferta-template.html", :locals =>{:item => oferta}, :ignore => true
 end
 
 # Reload the browser automatically whenever files change

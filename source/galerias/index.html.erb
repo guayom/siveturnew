@@ -33,7 +33,7 @@ layout: layout
 			<div class="grid-sizer col-mob-12 col-xs-6 col-sm-2"></div>
 			<% dato.galerias.each do |galeria| %>
 				<div class="item gal-item style-3 col-mob-12 col-xs-6 col-sm-4" style="position: absolute; left: 0px; top: 0px;">
-					<a class="black-hover" href="<%= galeria.slug %>.html">
+					<a class="black-hover" href="<%= galeria.titulo.parameterize %>.html">
 						<div class="gal-item-icon">
 							<img class="img-full img-responsive" src="<%= galeria.portada.file.width(360).height(202).fit('crop').to_url %>" alt="">
 							<div class="tour-layer delay-1"></div>

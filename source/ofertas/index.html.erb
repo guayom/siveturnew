@@ -11,7 +11,7 @@ title: Ofertas
 <% end %>
 
 <% dato.ofertas.each do |oferta| %>
-  <% link = "/ofertas/#{oferta.slug}.html"  %>
+  <% link = "/ofertas/#{oferta.titulo.parameterize}.html"  %>
 
   <%= partial "partials/producto", :locals => { titulo: oferta.titulo, link: link, thumbnail: oferta.imagen, descripcion: nil, extraclasses: ""  } %>
 <% end %>

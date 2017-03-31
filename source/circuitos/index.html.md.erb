@@ -15,7 +15,7 @@ title: Circuitos
   precios = Array.new
   #precios = circuito.precios.collect{ |e| e.tpl }
   descripcion = "desde <span class='color-blue'>#{circuito.moneda.simbolo}</span> persona"
-  link = "/circuitos/#{circuito.slug}.html"
+  link = "/circuitos/#{circuito.titulo.parameterize}.html"
   if circuito.pais.nil?
     extraclases = ""
   else

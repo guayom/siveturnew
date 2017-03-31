@@ -34,40 +34,40 @@ layout: layout
 <script>
   window.store = {
     <% dato.excursiones_programadas.each_with_index do |excursion, index| %>
-      "/excursiones-programadas/<%= excursion.slug %>": {
+      "/excursiones-programadas/<%= excursion.titulo.parameterize %>": {
         "title": "<%= excursion.titulo %>",
         "category": "Excursion",
-        "url": "/excursiones-programadas/<%= excursion.slug %>.html",
+        "url": "/excursiones-programadas/<%= excursion.titulo.parameterize %>.html",
         "image": '<%= image_tag excursion.imagen.file.width(370).height(277).fit('crop').to_url unless excursion.imagen.nil? %>',
         "pais": "<%= excursion.pais unless excursion.pais.nil?%>",
         "ciudad": "<%= excursion.ciudad unless excursion.ciudad.nil?%>"
       },
     <% end %>
     <% dato.circuitos.each_with_index do |circuito, index| %>
-      "/circuitos/<%= circuito.slug %>": {
+      "/circuitos/<%= circuito.titulo.parameterize %>": {
         "title": "<%= circuito.titulo %>",
         "category": "Circuito",
-        "url": "/circuitos/<%= circuito.slug %>.html",
+        "url": "/circuitos/<%= circuito.titulo.parameterize %>.html",
         "image": '<%= image_tag circuito.thumbnail.file.width(370).height(277).fit('crop').to_url unless circuito.thumbnail.nil? %>',
         "pais": "<%= circuito.pais unless circuito.pais.nil?%>",
         "ciudad": "<%= circuito.ciudad unless circuito.ciudad.nil?%>"
       },
     <% end %>
     <% dato.ofertas.each_with_index do |oferta, index| %>
-      "/ofertas/<%= oferta.slug %>": {
+      "/ofertas/<%= oferta.titulo.parameterize %>": {
         "title": "<%= oferta.titulo %>",
         "category": "Oferta",
-        "url": "/ofertas/<%= oferta.slug %>.html",
+        "url": "/ofertas/<%= oferta.titulo.parameterize %>.html",
         "image": '<%= image_tag oferta.imagen.file.width(370).height(277).fit('crop').to_url unless oferta.imagen.nil? %>',
         "pais": "<%= oferta.pais unless oferta.pais.nil?%>",
         "ciudad": "<%= oferta.ciudad unless oferta.ciudad.nil?%>"
       },
     <% end %>
     <% dato.paquetes.each_with_index do |paquete, index| %>
-      "/paquetes/<%= paquete.destino.code %>/<%= paquete.slug %>.html": {
+      "/paquetes/<%= paquete.destino.code %>/<%= paquete.titulo.parameterize %>.html": {
         "title": "<%= paquete.titulo %>",
         "category": "Paquete",
-        "url": "/paquetes/<%= paquete.destino.code %>/<%= paquete.slug %>.html",
+        "url": "/paquetes/<%= paquete.destino.code %>/<%= paquete.titulo.parameterize %>.html",
         "image": '<%= image_tag paquete.thumbnail.file.width(370).height(277).fit('crop').to_url unless paquete.thumbnail.nil? %>',
         "pais": "<%= paquete.pais unless paquete.pais.nil?%>",
         "ciudad": "<%= paquete.ciudad unless paquete.ciudad.nil?%>"

@@ -8,14 +8,14 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Sivetur" %></title>
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic" rel="stylesheet" type="text/css">  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic" rel="stylesheet" type="text/css">
 
     <%= stylesheet_link_tag :site %>
   </head>
 
   <body class="<%= page_classes %>" data-color="theme-1">
-    <%= partial "partials/leader" %>
+    <%= partial "partials/loader" %>
     <%= partial "partials/header" %>
     <%= yield %>
     <%= partial "partials/footer" %>

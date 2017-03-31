@@ -13,7 +13,7 @@ title: Excursiones Programadas
 <% dato.excursiones_programadas.each do |excursion| %>
   <%
   descripcion = ""
-  link = "/excursiones-programadas/#{excursion.slug}.html"
+  link = "/excursiones-programadas/#{excursion.titulo.parameterize}.html"
   extraclasses = ""
   %>
 
