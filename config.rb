@@ -32,7 +32,7 @@ helpers do
   end
 
   def dato_image_path(path)
-    "http://dato-images.imgix.net" + path
+    "http://www.datocms-assets.com" + path
     #'/images/test' + path
   end
 
