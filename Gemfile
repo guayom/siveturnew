@@ -13,4 +13,4 @@ gem 'middleman', '>= 4.0.0'
 gem 'middleman-livereload'
 
 gem 'font-awesome-sass'
-gem 'middleman-dato', '~> 0.5.15'
+gem "middleman-dato", ">=0.7.2"
