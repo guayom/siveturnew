@@ -2,16 +2,24 @@
 layout: products
 title: Ofertas
 ---
-<% content_for(:sidebar) do %>
-  <%= partial "partials/sidebar", :locals => { categoria: 'ofertas', collection: dato.ofertas } %>
-<% end %>
+<% if dato.ofertas.count > 0 %>
+  <% content_for(:sidebar) do %>
+    <%= partial "partials/sidebar", :locals => { categoria: 'ofertas', collection: dato.ofertas } %>
+  <% end %>
 
-<% content_for(:itemcount) do %>
-  <%= dato.ofertas.count %>
-<% end %>
+  <% content_for(:itemcount) do %>
+    <%= dato.ofertas.count %>
+  <% end %>
 
-<% dato.ofertas.each do |oferta| %>
-  <% link = "/ofertas/#{oferta.titulo.parameterize}.html"  %>
+  <% dato.ofertas.each do |oferta| %>
+    <% link = "/ofertas/#{oferta.titulo.parameterize}.html"  %>
 
-  <%= partial "partials/producto", :locals => { titulo: oferta.titulo, link: link, thumbnail: oferta.imagen, descripcion: nil, extraclasses: ""  } %>
+    <%= partial "partials/producto", :locals => { titulo: oferta.titulo, link: link, thumbnail: oferta.imagen, descripcion: nil, extraclasses: ""  } %>
+  <% end %>
+<% else %>
+  <div class="col-xs-12">
+    <div class="alert-message">
+      <h2>Lo sentimos, en este momento no hay ofertas disponibles.</h2>
+    </div>
+  </div>
 <% end %>

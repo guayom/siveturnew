@@ -76,6 +76,7 @@ dato.galerias.each do |galeria|
   proxy "/galerias/#{galeria.titulo.parameterize}.html", "/galerias/galeria-template.html", :locals =>{:galeria => galeria}, :ignore => true
 end
 
+ignore "/ofertas/oferta-template.html"
 dato.ofertas.each do |oferta|
   proxy "/ofertas/#{oferta.titulo.parameterize}.html", "/ofertas/oferta-template.html", :locals =>{:item => oferta}, :ignore => true
 end
